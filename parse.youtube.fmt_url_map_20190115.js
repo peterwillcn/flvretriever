@@ -1,5 +1,15 @@
 var YouTubeParser, getYouTubeUrl;
 
+function retrieverYouTubeUrl() {
+  //http://kej.tw/flvretriever
+  var inputUrl = $('#url_input').val();
+  var urlArray = inputUrl.split('=');
+  //http://www.youtube.com/get_video_info?eurl=http%3A%2F%2Fkej.tw%2F&sts=1586&video_id=LXZoSQDj0pA
+  var link = 'http://www.youtube.com/get_video_info?eurl=http%3A%2F%2Fkej.tw%2F&sts=1586&video_id='+urlArray[1];
+  $("a#down_link").attr('href', link);
+  window.location.href = link;
+}
+
 if (!Array.prototype.indexOf) {
   Array.prototype.indexOf = function(needle) {
     var i, item, j, len, pos;
